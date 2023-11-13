@@ -2,7 +2,7 @@
   "global": {
     "close": "Luk"
   },
-  "appName": "VejrApp",
+  "appName": "WeatherApp",
   "airConditions": {
     "realFeel": "Føles som",
     "humidity": "Luftfugtighed",

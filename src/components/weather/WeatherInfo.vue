@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from "vuex";
+import {mapActions} from "vuex";
 import DailyForecast from "@/components/weather/forecasts/DailyForecast.vue";
 import HourlyForecast from "@/components/weather/forecasts/HourlyForecast.vue";
 import CurrentWeatherOverview from "@/components/weather/forecasts/CurrentWeatherOverview.vue";
@@ -34,13 +34,6 @@ export default {
     this.$store.commit('setLoading', true);
     this.fetchCurrentWeather();
     this.fetchWeatherForecast();
-  },
-
-  computed: {
-    ...mapGetters({
-      getCurrentWeather: "getCurrentWeather",
-      getHourlyForecast: "getHourlyForecast"
-    }),
   },
 
   methods: {

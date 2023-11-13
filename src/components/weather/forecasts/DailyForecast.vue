@@ -30,7 +30,7 @@
               >
                 <template v-slot:activator="{ on }">
                   <v-img
-                      :src="`https://www.openweathermap.org/img/wn/${dailyForecast.icon}@2x.png`"
+                      :src="require(`../../../assets/weatherConditionIcons/${dailyForecast.icon}.svg`)"
                       id="daily-forecast-icon"
                       class="daily-forecast-icon"
                       max-width="78"

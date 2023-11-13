@@ -14,32 +14,32 @@
           <v-col
               v-for="(hourForecast, index) in getHourlyForecast"
               :key="index"
-              id="hourly-forecast-column"
+              :id="`hourly-forecast-column-${index}`"
               class="d-md-flex col-sm-12 col-md-2 flex-sm-column flex-md-row justify-md-space-between"
           >
             <div class="d-flex flex-md-column justify-space-between ml-5">
-              <span id="daily-forecast-time" class="daily-forecast-time">
+              <span :id="`daily-forecast-time-${index}`" class="daily-forecast-time">
                 {{hourForecast.time}}
               </span>
               <v-tooltip
-                  id="hourly-forecast-icon-tooltip"
+                  :id="`hourly-forecast-icon-tooltip-${index}`"
                   class="hourly-forecast-icon-tooltip" bottom
               >
                 <template v-slot:activator="{ on }">
                   <v-img
-                      :src="`https://www.openweathermap.org/img/wn/${hourForecast.icon}@2x.png`"
-                      id="hourly-forecast-icon"
+                      :src="require(`../../../assets/weatherConditionIcons/${hourForecast.icon}.svg`)"
+                      :id="`hourly-forecast-icon-${index}`"
                       class="hourly-forecast-icon"
                       max-width="50"
                       max-height="50"
                       v-on="on"
                   />
                 </template>
-                <span id="hourly-forecast-description" class="hourly-forecast-description">
+                <span :id="`hourly-forecast-description-${index}`" class="hourly-forecast-description">
                   {{ capitalizeFirstLetter(hourForecast.description) }}
                 </span>
               </v-tooltip>
-              <span id="hourly-forecast-temperature" class="hourly-forecast-temperature mt-2">
+              <span :id="`hourly-forecast-temperature-${index}`" class="hourly-forecast-temperature mt-2">
                 {{ hourForecast.temperature }}
               </span>
             </div>
@@ -60,7 +60,7 @@
       >
         <v-skeleton-loader
             type="article"
-            id="hourly-forecast-skeleton-loader"
+            :id="`hourly-forecast-skeleton-loader-${index}`"
             class="hourly-forecast-skeleton-loader"
             width="100%"
             boilerplate

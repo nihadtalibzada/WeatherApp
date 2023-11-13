@@ -34,7 +34,7 @@
       <v-img
           id="weather-overview-image"
           class="weather-overview-image"
-          :src="`https://openweathermap.org/img/wn/${getCurrentWeather.icon}@4x.png`"
+          :src="require(`../../../assets/weatherConditionIcons/${getCurrentWeather.icon}.svg`)"
           max-width="200"
           max-height="200"
       />
