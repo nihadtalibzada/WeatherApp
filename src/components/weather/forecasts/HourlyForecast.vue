@@ -17,7 +17,7 @@
               :id="`hourly-forecast-column-${index}`"
               class="d-md-flex col-sm-12 col-md-2 flex-sm-column flex-md-row justify-md-space-between"
           >
-            <div class="d-flex flex-md-column justify-space-between ml-5">
+            <div class="d-flex flex-md-column justify-space-between align-center ml-5">
               <span :id="`hourly-forecast-time-${index}`" class="hourly-forecast-time">
                 {{hourForecast.time}}
               </span>

@@ -69,12 +69,12 @@ const getters = {
         return state.currentWeatherData;
     },
 
-    getDailyForecast(state) {
-        return state.dailyForecastData;
-    },
-
     getHourlyForecast(state) {
         return state.hourlyForecastData;
+    },
+
+    getDailyForecast(state) {
+        return state.dailyForecastData;
     },
 
     getIsLoading(state) {
