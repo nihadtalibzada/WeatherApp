@@ -13,5 +13,8 @@
     "dailyForecast": "DAILY FORECAST",
     "hourlyForecast": "3 HOUR FORECAST"
   },
-  "errorMessage": "Error occurred while searching for the forecast. Please try again."
+  "errorMessage": "Error occurred while searching for the forecast. Please try again.",
+  "languageSelector": {
+    "tooltip": "Sprog"
+  }
 }

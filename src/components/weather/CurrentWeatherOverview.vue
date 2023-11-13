@@ -5,9 +5,15 @@
       v-if="!getIsLoading"
   >
     <v-col class="basic-weather-info d-flex flex-column align-baseline">
-      <span class="font-weight-bold text-md-h4 text--primary">{{ getCurrentWeather.city }}</span>
-      <span class="text-subtitle-1 text--primary">{{ capitalizeFirstLetter(getCurrentWeather.description) }}</span>
-      <span class="font-weight-bold text-md-h2 text--primary mt-4">{{ getCurrentWeather.temperature }}</span>
+      <span class="font-weight-bold text-md-h4 text--primary">
+        {{ getCurrentWeather.city }}
+      </span>
+      <span class="text-subtitle-1 text--primary">
+        {{ capitalizeFirstLetter(getCurrentWeather.description) }}
+      </span>
+      <span class="font-weight-bold text-md-h2 text--primary mt-4">
+        {{ getCurrentWeather.temperature }}
+      </span>
     </v-col>
     <v-col class="real-time-weather-forecast-image d-flex justify-end alignend">
       <v-img
