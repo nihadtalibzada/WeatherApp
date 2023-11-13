@@ -80,8 +80,7 @@ export default {
     ...mapGetters({
       getCurrentWeather: "getCurrentWeather",
       getHourlyForecast: "getHourlyForecast",
-      getIsLoading: "getIsLoading",
-      getIsErrorThrown: "getIsErrorThrown",
+      getIsLoading: "getIsLoading"
     }),
   },
 

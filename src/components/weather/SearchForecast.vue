@@ -43,8 +43,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      getIsLoading: "getIsLoading",
-      getIsErrorThrown: "getIsErrorThrown",
+      getIsLoading: "getIsLoading"
     }),
   },
 
@@ -61,10 +60,17 @@ export default {
         ];
         return;
       }
+      this.requiredRule = [];
       this.$store.commit('setLoading', true);
-      this.fetchCurrentWeather(this.cityInput).then().catch(() => this.requiredRule = [this.$t('errorMessage')]);
-      this.fetchWeatherForecast(this.cityInput).then().catch(() => this.requiredRule = [this.$t('errorMessage')]);
-      console.log('this.getIsErrorThrown: ', this.getIsErrorThrown)
+      this.fetchCurrentWeather(this.cityInput)
+          .then()
+          .catch((error) => {
+            this.requiredRule = [error.message]
+          });
+
+      this.fetchWeatherForecast(this.cityInput)
+          .then()
+          .catch((error) => this.requiredRule = [error.message]);
     },
 
     /*fetchCities(input) {

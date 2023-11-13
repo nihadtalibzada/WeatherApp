@@ -26,7 +26,7 @@
                 </template>
                 <span>{{ capitalizeFirstLetter(dailyForecast.description) }}</span>
               </v-tooltip>
-              <span class="mt-2 daily-forecast-temperature text-right">{{ dailyForecast.averageTemperature }}</span>
+              <span class="daily-forecast-temperature text-right">{{ dailyForecast.averageTemperature }}</span>
             </div>
             <v-divider v-if="index !== getDailyForecast.length - 1"></v-divider>
           </v-col>
