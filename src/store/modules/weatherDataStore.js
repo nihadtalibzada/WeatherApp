@@ -5,8 +5,7 @@ const state = {
     currentWeatherData: null,
     dailyForecastData: [],
     hourlyForecastData: [],
-    isLoading: false,
-    isErrorThrown: false
+    isLoading: false
 }
 
 const mutations = {
@@ -61,15 +60,7 @@ const mutations = {
 
     setLoading(state, isLoading) {
         state.isLoading = isLoading;
-    },
-
-    setErrorThrown(state, isErrorThrown) {
-        state.isErrorThrown = isErrorThrown;
-    },
-
-    /*addManufacturerFilterResults(state, results) {
-        Vue.set(state.productsFilteredByManufacturerName, results.filter, results.products);
-    },*/
+    }
 }
 
 const getters = {
@@ -87,25 +78,18 @@ const getters = {
 
     getIsLoading(state) {
         return state.isLoading;
-    },
-
-    getIsErrorThrown(state) {
-        return state.isErrorThrown;
-    },
+    }
 }
 
 const actions = {
     fetchCurrentWeather({ commit }, city = Vue.prototype.$constVariables.defaultCityToSearch) {
-        WeatherService.fetchWeather(city, Vue.prototype.$constVariables.apiForecastTypes.CURRENT)
-            .then(currentWeatherResponse => {
-                console.log('currentWeatherResponse: ', currentWeatherResponse)
-                commit('setCurrentWeatherData', currentWeatherResponse)
-            })
-            .catch(() => commit('setErrorThrown', true));
+        return WeatherService.fetchWeather(city, Vue.prototype.$constVariables.apiForecastTypes.CURRENT)
+            .then(currentWeatherResponse => commit('setCurrentWeatherData', currentWeatherResponse))
+            .catch((error) => Promise.reject(error));
     },
 
     fetchWeatherForecast({ commit }, city = Vue.prototype.$constVariables.defaultCityToSearch) {
-        WeatherService.fetchWeather(city, Vue.prototype.$constVariables.apiForecastTypes.DAILY_FORECAST)
+        return WeatherService.fetchWeather(city, Vue.prototype.$constVariables.apiForecastTypes.DAILY_FORECAST)
             .then(weatherForecast => {
                 commit('setHourlyForecastData', weatherForecast);
                 commit('setDailyForecastData', weatherForecast);
@@ -114,9 +98,9 @@ const actions = {
                     commit('setLoading', false);
                 }, 1500)
             })
-            .catch(() => {
-                commit('setErrorThrown', true)
+            .catch((error) => {
                 commit('setLoading', false);
+                return Promise.reject(error)
             });
     },
 }

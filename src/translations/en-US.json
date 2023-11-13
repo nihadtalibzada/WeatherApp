@@ -13,7 +13,12 @@
     "dailyForecast": "DAILY FORECAST",
     "hourlyForecast": "3 HOUR FORECAST"
   },
-  "errorMessage": "Error occurred while searching for the forecast. Please try again.",
+  "errorMessages": {
+    "default": "Error occurred while searching for the forecast. Please try again.",
+    "404": "City not found. Please check the city name and try again.",
+    "401": "Unauthorized access. Please check your credentials.",
+    "500": "Internal server error. Please try again later."
+  },
   "languageSelector": {
     "tooltip": "Language"
   }
