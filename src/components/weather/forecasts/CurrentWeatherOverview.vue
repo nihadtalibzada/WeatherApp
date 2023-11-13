@@ -58,9 +58,9 @@
       <v-skeleton-loader
           id="weather-overview-skeleton-loader-image"
           type="image"
-          width="50%"
+          width="150"
           class="rounded-circle"
-          height="200"
+          height="150"
           boilerplate
       ></v-skeleton-loader>
     </v-col>
