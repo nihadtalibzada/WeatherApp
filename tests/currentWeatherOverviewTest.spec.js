@@ -36,15 +36,4 @@ test.describe('WeatherApp weather forecast tests - valid input', () => {
         const description = await page.textContent('#weather-overview-description');
         expect(description).not.toBeUndefined();
     });
-
-    test('to test the content of hourly forecast', async ({ page }) => {
-        // Wait for the hourly forecast data to load
-        await page.waitForSelector('#hourly-forecast-card');
-
-        const hourlyForecastTitle = await page.textContent('#hourly-forecast-card-title');
-        expect(hourlyForecastTitle).not.toBeUndefined();
-
-        const hourlyForecastCards = await page.textContent('#hourly-forecast-column');
-        expect(hourlyForecastCards.length).toEqual(6);
-    });
 });

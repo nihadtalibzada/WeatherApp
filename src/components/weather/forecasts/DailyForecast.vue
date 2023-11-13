@@ -1,5 +1,5 @@
 <template>
-  <v-col id="daily-forecast-card-container" class="daily-forecast-card-container col-sm-12 col-lg-5">
+  <v-col class="daily-forecast-card-container col-sm-12 col-lg-5">
     <v-text-field class="hidden hidden-xs-only"/>
     <v-card
         v-if="!getIsLoading"
@@ -17,32 +17,32 @@
           <v-col
               v-for="(dailyForecast, index) in getDailyForecast"
               :key="index"
-              id="daily-forecast-column"
+              :id="`daily-forecast-column-${index}`"
               class="daily-forecast-column d-flex flex-column"
           >
             <div class="daily-forecast-row d-flex flex-md-row justify-space-between align-center ml-5">
-              <span id="daily-forecast-date" class="daily-forecast-date text-left">
+              <span :id="`daily-forecast-date-${index}`" class="daily-forecast-date text-left">
                 {{ dailyForecast.date }}
               </span>
               <v-tooltip
-                  id="daily-forecast-icon-tooltip"
+                  :id="`daily-forecast-icon-tooltip-${index}`"
                   class="daily-forecast-icon-tooltip" bottom
               >
                 <template v-slot:activator="{ on }">
                   <v-img
                       :src="require(`../../../assets/weatherConditionIcons/${dailyForecast.icon}.svg`)"
-                      id="daily-forecast-icon"
+                      :id="`daily-forecast-icon-${index}`"
                       class="daily-forecast-icon"
                       max-width="78"
                       max-height="78"
                       v-on="on"
                   />
                 </template>
-                <span id="daily-forecast-description" class="daily-forecast-description">
+                <span :id="`daily-forecast-description-${index}`" class="daily-forecast-description">
                   {{ capitalizeFirstLetter(dailyForecast.description) }}
                 </span>
               </v-tooltip>
-              <span id="daily-forecast-temperature" class="daily-forecast-temperature text-right">
+              <span :id="`daily-forecast-temperature-${index}`" class="daily-forecast-temperature text-right">
                 {{ dailyForecast.averageTemperature }}
               </span>
             </div>

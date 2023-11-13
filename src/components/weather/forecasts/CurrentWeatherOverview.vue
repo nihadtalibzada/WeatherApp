@@ -1,6 +1,5 @@
 <template>
   <v-row
-      id="weather-overview-container"
       class="weather-overview-container"
       v-if="!getIsLoading"
   >

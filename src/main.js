@@ -5,6 +5,7 @@ import vuetify from '@/plugins/vuetify'
 import store from '../src/store';
 import constants from './config/constants';
 
+window.$store = store;
 Vue.use(VueI18n);
 export const i18n = new VueI18n({
   locale: 'en-US', // set locale
