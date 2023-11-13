@@ -1,5 +1,6 @@
 import Vue from "vue";
 import WeatherService from '@/services/weatherService.js'
+import {i18n} from "@/main"
 
 const state = {
     currentWeatherData: null,
@@ -36,7 +37,7 @@ const mutations = {
     setDailyForecastData(state, dailyForecast) {
         const groupedByDay = {};
         dailyForecast.list.forEach(forecast => {
-            const date = new Date(forecast.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+            const date = new Date(forecast.dt * 1000).toLocaleDateString(i18n.locale, { weekday: 'long' }).toUpperCase();
             if (!groupedByDay[date]) {
                 groupedByDay[date] = [];
             }

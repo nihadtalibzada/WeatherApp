@@ -25,6 +25,6 @@ export default {
     },
 
     constructApiURL(city, forecastType) {
-        return `https://api.openweathermap.org/data/2.5/${forecastType}?q=${city}&exclude=minutely&units=metric&appid=${Vue.prototype.$constVariables.openWeatherApiKey}`;
+        return `https://api.openweathermap.org/data/2.5/${forecastType}?q=${city}&exclude=minutely&lang=${i18n.locale.split('-')[0]}&units=metric&appid=${Vue.prototype.$constVariables.openWeatherApiKey}`;
     }
 }

@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "LanguageSelector",
 
@@ -61,8 +63,15 @@ export default {
   }),
 
   methods: {
+    ...mapActions({
+      fetchCurrentWeather: "fetchCurrentWeather",
+      fetchWeatherForecast: "fetchWeatherForecast"
+    }),
+
     changeLanguage(language) {
       this.$i18n.locale = language.langCode;
+      this.fetchCurrentWeather();
+      this.fetchWeatherForecast();
     }
   }
 }

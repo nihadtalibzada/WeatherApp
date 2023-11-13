@@ -2,18 +2,27 @@
   "global": {
     "close": "Luk"
   },
-  "appName": "WeatherApp",
+  "appName": "VejrApp",
   "airConditions": {
-    "realFeel": "Real Feel",
-    "humidity": "Humidity",
-    "wind": "Wind",
-    "pressure": "Air pressure"
+    "realFeel": "Føles som",
+    "humidity": "Luftfugtighed",
+    "wind": "Vind",
+    "pressure": "Lufttryk"
   },
   "labels": {
-    "dailyForecast": "DAILY FORECAST",
-    "hourlyForecast": "3 HOUR FORECAST"
+    "dailyForecast": "DAGLIG PROGNOSE",
+    "hourlyForecast": "3 TIMERS PROGNOSE",
+    "airConditions": "LUFTFORHOLD",
+    "search": "Søg",
+    "searchPlaceholder": "Søg efter en by",
+    "switchTheme": "Skift tema"
   },
-  "errorMessage": "Error occurred while searching for the forecast. Please try again.",
+  "errorMessages": {
+    "default": "Der opstod en fejl under søgning efter vejrprognosen. Prøv igen.",
+    "404": "Byen blev ikke fundet. Tjek bynavnet og prøv igen.",
+    "401": "Uautoriseret adgang. Tjek dine legitimationsoplysninger.",
+    "500": "Intern serverfejl. Prøv igen senere."
+  },
   "languageSelector": {
     "tooltip": "Sprog"
   }

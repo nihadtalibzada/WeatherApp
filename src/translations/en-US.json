@@ -11,7 +11,11 @@
   },
   "labels": {
     "dailyForecast": "DAILY FORECAST",
-    "hourlyForecast": "3 HOUR FORECAST"
+    "hourlyForecast": "3 HOUR FORECAST",
+    "airConditions": "AIR CONDITIONS",
+    "search": "Search",
+    "searchPlaceholder": "Search a city",
+    "switchTheme": "Switch theme"
   },
   "errorMessages": {
     "default": "Error occurred while searching for the forecast. Please try again.",
