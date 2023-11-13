@@ -12,7 +12,7 @@
         max-width="60"
         contain
     ></v-img>
-    <v-toolbar-title class="toolbar-title ml-2 hidden-xs-only">
+    <v-toolbar-title id="toolbar-title" class="toolbar-title ml-2 hidden-xs-only">
       {{ $t('appName') }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
@@ -22,7 +22,7 @@
         v-model="$vuetify.theme.dark"
         inset
         hide-details
-        label="Switch theme"
+        :label="$t('labels.switchTheme')"
     ></v-switch>
   </v-row>
 </template>

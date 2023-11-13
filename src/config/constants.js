@@ -4,7 +4,11 @@ const constVariables = {
   apiForecastTypes: {
     CURRENT: 'weather',
     DAILY_FORECAST: 'forecast'
-  }
+  },
+  skeletonLoaderAmounts: {
+    DAILY_FORECAST: 4,
+    HOURLY_FORECAST: 6
+  },
 }
 
 module.exports = constVariables;

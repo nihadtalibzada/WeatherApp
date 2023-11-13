@@ -4,28 +4,50 @@
       class="weather-overview-container"
       v-if="!getIsLoading"
   >
-    <v-col class="basic-weather-info d-flex flex-column align-baseline">
-      <span class="font-weight-bold text-md-h4 text--primary">
+    <v-col
+        id="weather-overview"
+        class="weather-overview d-flex flex-column align-baseline"
+    >
+      <span
+          id="weather-overview-city"
+          class="weather-overview-city font-weight-bold text-md-h4 text--primary"
+      >
         {{ getCurrentWeather.city }}
       </span>
-      <span class="text-subtitle-1 text--primary">
+      <span
+          id="weather-overview-description"
+          class="weather-overview-description text-subtitle-1 text--primary"
+      >
         {{ capitalizeFirstLetter(getCurrentWeather.description) }}
       </span>
-      <span class="font-weight-bold text-md-h2 text--primary mt-4">
+      <span
+          id="weather-overview-temperature"
+          class="weather-overview-temperature font-weight-bold text-md-h2 text--primary mt-4"
+      >
         {{ getCurrentWeather.temperature }}
       </span>
     </v-col>
-    <v-col class="real-time-weather-forecast-image d-flex justify-end alignend">
+    <v-col
+        id="weather-overview-image-container"
+        class="weather-overview-image-container d-flex justify-end align-end"
+    >
       <v-img
+          id="weather-overview-image"
+          class="weather-overview-image"
           :src="`https://openweathermap.org/img/wn/${getCurrentWeather.icon}@4x.png`"
           max-width="200"
           max-height="200"
       />
     </v-col>
   </v-row>
-  <v-row class="d-flex flex-row" v-else>
+  <v-row
+      id="weather-overview-skeleton-loader-container"
+      class="weather-overview-skeleton-loader-container d-flex flex-row"
+      v-else
+  >
     <v-col>
       <v-skeleton-loader
+          id="weather-overview-skeleton-loader-article"
           type="article"
           width="100%"
           height="200"
@@ -34,6 +56,7 @@
     </v-col>
     <v-col class="d-flex justify-end">
       <v-skeleton-loader
+          id="weather-overview-skeleton-loader-image"
           type="image"
           width="50%"
           class="rounded-circle"

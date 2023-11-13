@@ -1,21 +1,23 @@
 <template>
   <v-text-field
-      label="Search"
+      id="search-weather-forecast-text-field"
+      class="search-weather-forecast-text-field"
+      :label="$t('labels.search')"
       v-model="cityInput"
       outlined
-      color="blue"
       :rules="requiredRule"
-      placeholder="Search a city"
+      :placeholder="$t('labels.searchPlaceholder')"
       append-icon="mdi-magnify"
+      :disabled="getIsLoading"
       :loading="getIsLoading"
-      @keydown.enter="searchWeatherData"
-      @click:append="searchWeatherData"
+      @keydown.enter="searchWeatherForecast"
+      @click:append="searchWeatherForecast"
   ></v-text-field>
   <!--            <v-combobox
                       :items="cities"
                       v-model="cityInput"
                       @update:search-input="fetchCities"
-                      @change="searchWeatherData"
+                      @change="searchWeatherForecast"
                       color="white"
                       outlined
                       class="rounded-lg text-left"
@@ -53,7 +55,7 @@ export default {
       fetchWeatherForecast: "fetchWeatherForecast"
     }),
 
-    searchWeatherData() {
+    searchWeatherForecast() {
       if (!this.cityInput) {
         this.requiredRule = [
           value => !!value || 'Please search for a city name.'
