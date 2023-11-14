@@ -16,7 +16,7 @@ import {mapActions} from "vuex";
 import DailyForecast from "@/components/weather/forecasts/DailyForecast.vue";
 import HourlyForecast from "@/components/weather/forecasts/HourlyForecast.vue";
 import CurrentWeatherOverview from "@/components/weather/forecasts/CurrentWeatherOverview.vue";
-import SearchForecast from "@/components/weather/SearchForecast.vue";
+import SearchForecast from "@/components/weather/forecasts/SearchForecast.vue";
 import AirConditionsOverview from "@/components/weather/airConditions/AirConditionsOverview.vue";
 
 export default {

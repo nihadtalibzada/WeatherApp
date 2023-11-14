@@ -21,7 +21,8 @@
     "default": "Error occurred while searching for the forecast. Please try again.",
     "404": "City not found. Please check the city name and try again.",
     "401": "Unauthorized access. Please check your credentials.",
-    "500": "Internal server error. Please try again later."
+    "500": "Internal server error. Please try again later.",
+    "emptyInput": "Please search for a city name."
   },
   "languageSelector": {
     "tooltip": "Language"

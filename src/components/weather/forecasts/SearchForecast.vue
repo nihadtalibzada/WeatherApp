@@ -43,7 +43,7 @@ export default {
     searchWeatherForecast() {
       if (!this.cityInput) {
         this.requiredRule = [
-          value => !!value || 'Please search for a city name.'
+          value => !!value || this.$t('errorMessages.emptyInput')
         ];
         return;
       }
