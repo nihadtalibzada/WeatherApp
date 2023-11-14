@@ -6,7 +6,7 @@
         class="daily-forecast-card rounded-lg mx-auto"
         id="daily-forecast-card"
         elevation="4"
-        :max-width="$vuetify.breakpoint.mdAndUp ? '500' : '100%'"
+        :max-width="$vuetify.breakpoint.lgAndUp ? '500' : '100%'"
         max-height="650"
     >
       <v-card-title id="daily-forecast-card-title" class="text-sm-subtitle-2">
