@@ -58,7 +58,7 @@
           :key="index"
       >
         <v-skeleton-loader
-            id="daily-forecast-skeleton-loader"
+            :id="`daily-forecast-skeleton-loader-${index}`"
             class="daily-forecast-skeleton-loader mx-auto my-0 py-0"
             type="article"
             :width="$vuetify.breakpoint.mdAndUp ? '80%' : '100%'"

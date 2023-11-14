@@ -7,7 +7,7 @@
       <HourlyForecast id="hourly-forecast-component"/>
       <AirConditionsOverview/>
     </v-col>
-    <DailyForecast/>
+    <DailyForecast id="daily-forecast-component"/>
   </v-row>
 </template>
 

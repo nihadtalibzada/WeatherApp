@@ -3,17 +3,12 @@ test.describe('Daily forecast component tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('http://localhost:8080');
         // Wait for the component to load
-        await page.waitForSelector('#hourly-forecast-component');
+        await page.waitForSelector('#daily-forecast-card');
     });
 
     test('Checking the visibility of daily forecast rows', async ({ page }) => {
-        await page.goto('http://localhost:8080');
-
-        // Wait for the component to be rendered
-        await page.waitForSelector('#daily-forecast-card');
-
         // Check if the daily forecast card is visible
-        const dailyForecastCard = await page.$('#daily-forecast-card');
+        const dailyForecastCard = await page.locator('#daily-forecast-card');
         expect(dailyForecastCard).not.toBeNull();
         expect(await dailyForecastCard.isVisible()).toBe(true);
 
@@ -27,11 +22,6 @@ test.describe('Daily forecast component tests', () => {
     });
 
     test('Validating daily forecast content', async ({ page }) => {
-        await page.goto('http://localhost:8080');
-
-        // Wait for the component to be rendered
-        await page.waitForSelector('#daily-forecast-card');
-
         // Check if individual forecast rows are visible
         const dailyForecastRows = await page.$$('.daily-forecast-column');
 
@@ -54,7 +44,7 @@ test.describe('Daily forecast component tests', () => {
         await page.goto('http://localhost:8080');
 
         // Check if the skeleton loader is visible
-        const skeletonLoader = await page.$('#daily-forecast-skeleton-loader');
+        const skeletonLoader = await page.$('#daily-forecast-skeleton-loader-1');
         expect(skeletonLoader).not.toBeNull();
         expect(await skeletonLoader.isVisible()).toBe(true);
     });

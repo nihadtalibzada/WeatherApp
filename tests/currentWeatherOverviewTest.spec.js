@@ -6,7 +6,7 @@ test.describe('Weather forecast overview tests', () => {
         const validCity = 'New York';
 
         // Example: Test searching for a city
-        const searchInput = await page.$('#search-weather-forecast-text-field');
+        const searchInput = await page.locator('#search-weather-forecast-text-field');
         expect(searchInput).not.toBeNull();
 
         await searchInput.fill(validCity);
@@ -38,7 +38,7 @@ test.describe('Weather forecast overview tests', () => {
         const defaultCity = 'Copenhagen';
 
         // Example: Test searching for a city
-        const searchInput = await page.$('#search-weather-forecast-text-field');
+        const searchInput = await page.locator('#search-weather-forecast-text-field');
         expect(searchInput).not.toBeNull();
 
         await searchInput.fill(invalidCity);
