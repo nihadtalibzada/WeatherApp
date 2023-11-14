@@ -48,7 +48,6 @@ export default {
         return;
       }
       this.requiredRule = [];
-
       this.$store.commit('setLoading', true);
       this.fetchCurrentWeather(this.cityInput)
           .then()
