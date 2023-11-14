@@ -1,14 +1,12 @@
 const { test, expect } = require('@playwright/test');
 test.describe('Daily forecast component tests', () => {
     test.beforeEach(async ({ page }) => {
-        // Load the page
-        await page.goto('http://localhost:8080'); // Update the URL to match your application's URL
+        await page.goto('http://localhost:8080');
         // Wait for the component to load
         await page.waitForSelector('#hourly-forecast-component');
     });
 
     test('Checking the visibility of daily forecast rows', async ({ page }) => {
-        // Navigate to the page
         await page.goto('http://localhost:8080');
 
         // Wait for the component to be rendered
@@ -29,7 +27,6 @@ test.describe('Daily forecast component tests', () => {
     });
 
     test('Validating daily forecast content', async ({ page }) => {
-        // Navigate to the page
         await page.goto('http://localhost:8080');
 
         // Wait for the component to be rendered

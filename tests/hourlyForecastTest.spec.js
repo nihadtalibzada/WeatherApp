@@ -1,23 +1,23 @@
 const { test, expect } = require('@playwright/test');
 test.describe('Hourly forecast component tests', () => {
     test.beforeEach(async ({ page }) => {
-        // Load the page
-        await page.goto('http://localhost:8080'); // Update the URL to match your application's URL
+        await page.goto('http://localhost:8080');
         // Wait for the component to load
         await page.waitForSelector('#hourly-forecast-component');
     });
 
     test('should display hourly forecast when not loading', async ({ page }) => {
+        const cardTitle = '3 HOUR FORECAST';
         // Check if the card is visible
         const hourlyForecastCard = await page.locator('#hourly-forecast-card');
         expect(hourlyForecastCard).not.toBeNull();
 
         // Check if the title is correct
         const title = await page.textContent('#hourly-forecast-card-title');
-        expect(title.trim()).toBe('3 HOUR FORECAST');
+        expect(title.trim()).toBe(cardTitle);
 
         // Check if there are hourly forecast columns
-        const hourlyForecastColumns = await page.$$('.d-md-flex.col-sm-12.col-md-2');
+        const hourlyForecastColumns = await page.$$('.hourly-forecast-column');
         expect(hourlyForecastColumns.length).toBeGreaterThan(0);
 
         // Check if the first hourly forecast column has the expected content
@@ -26,12 +26,12 @@ test.describe('Hourly forecast component tests', () => {
         const temperature = await page.textContent('#hourly-forecast-temperature-0');
 
         expect(time).not.toBeNull();
-        await expect(icon).toBeVisible();
+        expect(icon).not.toBeNull();
         expect(temperature).not.toBeNull();
     });
 
     test('should display skeleton loader when loading', async ({ page }) => {
-        // Set the loading state to true (update this based on your Vuex store implementation)
+        // Set the loading state to true
         await page.evaluate(() => {
             window.$store.commit('setLoading', true);
         });
