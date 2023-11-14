@@ -2,7 +2,7 @@ import Vue from "vue";
 import {i18n} from "@/main"
 export default {
     fetchWeather(city, forecastType) {
-        const apiEndpoint = this.constructApiURL(city, forecastType)
+        const apiEndpoint = this.constructApiEndpoint(city, forecastType);
         return new Promise((resolve, reject) => {
             fetch(apiEndpoint)
                 .then(response => {
@@ -24,7 +24,7 @@ export default {
         });
     },
 
-    constructApiURL(city, forecastType) {
-        return `https://api.openweathermap.org/data/2.5/${forecastType}?q=${city}&exclude=minutely&lang=${i18n.locale.split('-')[0]}&units=metric&appid=${Vue.prototype.$constVariables.openWeatherApiKey}`;
+    constructApiEndpoint(city, forecastType) {
+        return `${Vue.prototype.$constVariables.weatherApiUrl}${forecastType}?q=${city}&exclude=minutely&lang=${i18n.locale.split('-')[0]}&units=metric&appid=${Vue.prototype.$constVariables.openWeatherApiKey}`;
     }
 }
