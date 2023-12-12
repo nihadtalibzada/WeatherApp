@@ -25,6 +25,6 @@ export default {
     },
 
     constructApiEndpoint(city, forecastType) {
-        return `${Vue.prototype.$constVariables.weatherApiUrl}${forecastType}?q=${city}&exclude=minutely&lang=${i18n.locale.split('-')[0]}&units=metric&appid=${Vue.prototype.$constVariables.openWeatherApiKey}`;
+        return `${Vue.prototype.$constVariables.weatherApiUrl}${forecastType}?q=${city}&exclude=minutely&lang=${i18n.locale.split('-')[0]}&units=metric&appid=${process.env.VUE_APP_OPENWEATHER_API_KEY}`;
     }
 }
